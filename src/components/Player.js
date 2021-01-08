@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlay,
         faAngleLeft,
@@ -42,7 +42,7 @@ const Player = ({audioRef, currentSong, isPlaying, setIsPlaying, setSongInfo, so
             <div className="time-control">
                 <p>{getTime(songInfo.currentTime)}</p>
                 <input min={0}
-                       max={songInfo.duration}
+                       max={songInfo.duration || 0}
                        value={songInfo.currentTime}
                        onChange={dragHandler}
                        type="range"/>
